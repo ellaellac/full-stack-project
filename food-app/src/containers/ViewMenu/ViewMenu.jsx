@@ -22,10 +22,11 @@ const Menu = () => {
       {menu &&
         menu.map((item) => (
           <Item
+            key={item.id}
             name={item.name}
             ingredients={item.ingredients}
             allergens={item.allergens}
-            isVegetarian={item.isVegetarian}
+            vegetarian={item.vegetarian}
             price={item.price}
           />
         ))}
