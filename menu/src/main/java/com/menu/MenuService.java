@@ -33,7 +33,6 @@ public class MenuService {
         return menu.get();
     }
 
-
     //Update
 
     public void updateMenu(Menu newMenu, long id) {
