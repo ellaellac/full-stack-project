@@ -42,8 +42,6 @@ public class MenuController {
         return ResponseEntity.status(HttpStatus.OK).body(menuService.getMenuByVegetarian());
     }
 
-
-
     //Update
     @PutMapping("/menu/{id}")
     public ResponseEntity<Menu> updateMenuById(@RequestBody Menu newMenu, @PathVariable long id) {

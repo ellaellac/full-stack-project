@@ -10,7 +10,6 @@ const Menu = () => {
     setVegetarian(!vegetarian);
   };
 
-  //All Menu
   const getMenu = async (vegetarian) => {
     let url = "http://localhost:8080/menu";
     if (vegetarian) {
@@ -29,7 +28,7 @@ const Menu = () => {
   return (
     <div className="view-menu">
       <h1>All Menu</h1>
-      <Button btnTitle="vegetarian" onClick={toogleVegetarianOption} />
+      <Button btnTitle="Vegetarian" onClick={toogleVegetarianOption} />
       {menu &&
         menu.map((item) => (
           <Item

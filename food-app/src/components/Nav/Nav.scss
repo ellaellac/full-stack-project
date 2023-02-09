@@ -1,0 +1,19 @@
+@use "../../styles/variables" as *;
+.nav {
+  z-index: 1;
+  background-color: $colour-darkred;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  height: 4rem;
+  top: -4rem;
+
+  &__link {
+    text-decoration: none;
+    color: $colour-white;
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-medium;
+  }
+}
