@@ -20,7 +20,7 @@ const Item = ({
       <p className="item__text">Ingredients : {ingredients}</p>
       <p className="item__text">Allergens : {allergens}</p>
       <p className="item__text">
-        Vegetarian Choice ? {vegetarian ? "Yes" : "No"}
+        Vegetarian Choice ?{vegetarian ? "Yes" : "No"}
       </p>
       <p className="item__price"> £ {price}</p>
     </div>

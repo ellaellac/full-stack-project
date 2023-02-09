@@ -5,7 +5,7 @@ import Button from "../components/Button/Button";
 import Item from "../components/Item/Item";
 
 const EditMenu = () => {
-  const [menuById, setMenuById] = useState([]);
+  const [menuById, setMenuById] = useState("");
   const { id } = useParams();
   const navigate = useNavigate();
 

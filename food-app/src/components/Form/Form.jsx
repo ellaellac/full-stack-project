@@ -24,6 +24,41 @@ const Form = ({ handleSubmit, formTitle, defaultForm }) => {
     }
   };
 
+  const checkboxCheckedJSX = (
+    <>
+      <label htmlFor="vegetarian">Vegetarian</label>
+      <input
+        className="form__text"
+        type="checkbox"
+        value={newMenu.vegetarian}
+        onChange={(event) =>
+          setNewMenu({
+            ...newMenu,
+            vegetarian: event.target.checked ? true : false,
+          })
+        }
+        checked
+      />
+    </>
+  );
+
+  const checkbocUncheckJSX = (
+    <>
+      <label htmlFor="vegetarian">Vegetarian</label>
+      <input
+        className="form__text"
+        type="checkbox"
+        value={newMenu.vegetarian}
+        onChange={(event) =>
+          setNewMenu({
+            ...newMenu,
+            vegetarian: event.target.checked ? true : false,
+          })
+        }
+      />
+    </>
+  );
+
   return (
     <div className="form">
       <h1>{formTitle}</h1>
@@ -56,18 +91,9 @@ const Form = ({ handleSubmit, formTitle, defaultForm }) => {
             setNewMenu({ ...newMenu, allergens: event.target.value })
           }
         />
-        <label htmlFor="vegetarian">Vegetarian</label>
-        <input
-          className="form__text"
-          type="checkbox"
-          value={newMenu.vegetarian}
-          onChange={(event) =>
-            setNewMenu({
-              ...newMenu,
-              vegetarian: event.target.checked ? true : false,
-            })
-          }
-        />
+
+        {newMenu.vegetarian ? checkboxCheckedJSX : checkbocUncheckJSX}
+
         <label htmlFor="price">Price</label>
         <input
           className="form__text"

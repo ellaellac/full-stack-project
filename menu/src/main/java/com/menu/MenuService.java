@@ -5,6 +5,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +33,21 @@ public class MenuService {
         }
         return menu.get();
     }
+
+    public List<Menu> getMenuByVegetarian() {
+        List<Menu> menu = menuRepository.findAll();
+        List<Menu> filteredMenu = new ArrayList<>();
+
+        for (Menu item : menu) {
+            if (item.getVegetarian()) {
+                filteredMenu.add(item);
+            }
+        }
+
+        return filteredMenu;
+
+    }
+
 
     //Update
 
