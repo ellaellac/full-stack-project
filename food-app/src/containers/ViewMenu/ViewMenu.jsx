@@ -18,7 +18,7 @@ const Menu = () => {
 
   return (
     <div className="view-menu">
-      <h1>Menu</h1>
+      <h1>All Menu</h1>
       {menu &&
         menu.map((item) => (
           <Item

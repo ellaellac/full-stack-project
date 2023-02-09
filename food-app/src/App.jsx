@@ -4,6 +4,7 @@ import Home from "./containers/Home/Home";
 import ViewMenu from "./containers/ViewMenu/ViewMenu";
 import CreateMenu from "./containers/CreateMenu/CreateMenu";
 import UpdateMenu from "./containers/UpdateMenu/UpdateMenu";
+import EditMenu from "./EditMenu/EditMenu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/menu" element={<ViewMenu />} />
         <Route path="/menu/create" element={<CreateMenu />} />
         <Route path="/menu/update" element={<UpdateMenu />} />
+        <Route path="/menu/update/:id" element={<EditMenu />} />
       </Routes>
     </Router>
   );
