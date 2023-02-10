@@ -9,16 +9,22 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<ViewMenu />} />
-        <Route path="/menu/create" element={<CreateMenu />} />
-        <Route path="/menu/update" element={<UpdateMenu />} />
-        <Route path="/menu/update/:id" element={<EditMenu />} />
-      </Routes>
-      <Nav />
-    </Router>
+    <div className="app">
+      <Router>
+        <div className="app__main-page">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<ViewMenu />} />
+            <Route path="/menu/create" element={<CreateMenu />} />
+            <Route path="/menu/update" element={<UpdateMenu />} />
+            <Route path="/menu/update/:id" element={<EditMenu />} />
+          </Routes>
+        </div>
+        <div className="app__nav">
+          <Nav />
+        </div>
+      </Router>
+    </div>
   );
 };
 

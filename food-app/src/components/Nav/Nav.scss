@@ -1,20 +1,19 @@
 @use "../../styles/variables" as *;
 .nav {
-  z-index: 1000;
   background-color: $colour-darkred;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   position: fixed;
   bottom: 0px;
-  height: 4rem;
+  height: 4.5rem;
   width: 100%;
 
   &__link {
     text-decoration: none;
     color: $colour-white;
     display: inline;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: $font-medium;
+    font-family: $font-title-family;
+    font-size: $font-small;
   }
 }

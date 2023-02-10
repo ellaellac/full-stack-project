@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Item from "../../components/Item/Item";
 import Button from "../../components/Button/Button";
-
+import "./ViewMenu.scss";
 const Menu = () => {
   const [menu, setMenu] = useState([]);
   const [vegetarian, setVegetarian] = useState(false);
@@ -25,10 +25,29 @@ const Menu = () => {
     getMenu(vegetarian);
   }, [vegetarian]);
 
+  //vegetarian button style
+  const vegetarianBtnOnActive = (
+    <Button
+      className="button--active"
+      btnTitle="Vegetarian"
+      onClick={toogleVegetarianOption}
+    />
+  );
+
+  const vegetarianBtnInactive = (
+    <Button
+      className="button--secondary"
+      btnTitle="Vegetarian"
+      onClick={toogleVegetarianOption}
+    />
+  );
+
   return (
     <div className="view-menu">
-      <h1>All Menu</h1>
-      <Button btnTitle="Vegetarian" onClick={toogleVegetarianOption} />
+      <div className="view-menu__header">
+        <h1 className="view-menu__title">All Menu</h1>
+        {vegetarian ? vegetarianBtnOnActive : vegetarianBtnInactive}
+      </div>
       {menu &&
         menu.map((item) => (
           <Item

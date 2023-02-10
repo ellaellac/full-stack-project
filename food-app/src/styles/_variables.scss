@@ -1,19 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Nunito&display=swap");
+
 $colour-white: rgba(255, 255, 255);
-$colour-black: rgba(0, 0, 0);
 $colour-green: rgba(0, 120, 124);
 $colour-darkgreen: rgb(32, 94, 97);
 $colour-yellow: rgb(243, 216, 116);
 $colour-orange: rgb(219, 80, 34);
-
-$colour-lightgreen: rgba(157, 221, 218);
-// $colour-orange: rgb(235, 117, 78);
-
 $colour-brown: rgb(91, 71, 51);
-$colour-lightbrown: rgb(188, 158, 127);
 $colour-darkred: rgb(158, 57, 60);
+$colour-pale: rgb(254, 195, 182);
+$colour-cherry: #990011ff;
+$colour-darkblue: #01141d;
+$colour-lightgreen: rgba(157, 221, 218);
 
 //font
-// $font-small: 14px;
-$font-medium: 18px;
-// $font-large: 28px;
-// $font-family:
+$font-small: 18px;
+$font-medium: 24px;
+$font-large: 28px;
+$font-title: 48px;
+
+$font-title-family: "Itim", cursive;
+$font-text-family: "Nunito", sans-serif;

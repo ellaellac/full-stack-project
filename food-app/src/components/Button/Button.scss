@@ -1,11 +1,33 @@
 @use "../../styles/variables" as *;
-.home__button {
+.botton--primary {
   border: 4px solid $colour-darkgreen;
   border-radius: 0.8rem;
   margin: 0.5rem;
-  width: 8rem;
-  height: 2.5rem;
+  width: 10rem;
+  height: 3rem;
   background-color: $colour-green;
   color: $colour-white;
   font-size: $font-medium;
+  font-family: $font-title-family;
+}
+
+.button--secondary,
+.button--active {
+  margin: 0.2rem;
+  border-radius: 0.8rem;
+  width: 8rem;
+  height: 3rem;
+  background-color: $colour-darkgreen;
+  color: $colour-white;
+  font-size: $font-medium;
+  font-family: $font-title-family;
+}
+
+.button--secondary {
+  border: 4px solid $colour-darkblue;
+}
+
+.button--active {
+  border: 4px solid $colour-darkred;
+  background-color: $colour-orange;
 }

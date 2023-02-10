@@ -1,7 +1,14 @@
 import { useState } from "react";
 import Button from "../Button/Button";
+import "./Form.scss";
 
-const Form = ({ handleSubmit, formTitle, defaultForm }) => {
+const Form = ({
+  handleSubmit,
+  handleDeleteMenu,
+  formTitle,
+  defaultForm,
+  isNewMenu,
+}) => {
   const [newMenu, setNewMenu] = useState(defaultForm);
 
   const handleValidation = (event) => {
@@ -24,6 +31,7 @@ const Form = ({ handleSubmit, formTitle, defaultForm }) => {
     }
   };
 
+  //checkbox
   const checkboxCheckedJSX = (
     <>
       <label htmlFor="vegetarian">Vegetarian</label>
@@ -59,59 +67,91 @@ const Form = ({ handleSubmit, formTitle, defaultForm }) => {
     </>
   );
 
+  //Form with or without Delete Btn
+  const formWithDelBtn = (
+    <div className="form__buttons">
+      <div type="submit">
+        <Button className="button--secondary" btnTitle="Submit" />
+      </div>
+      <Button
+        className="button--secondary"
+        btnTitle="Delete"
+        onClick={handleDeleteMenu}
+      />
+    </div>
+  );
+
+  const formWithoutDelBtn = (
+    <div className="form__buttons">
+      <div type="submit">
+        <Button className="button--secondary" btnTitle="Submit" />
+      </div>
+    </div>
+  );
+
   return (
     <div className="form">
-      <h1>{formTitle}</h1>
+      <h1 className="form__header">{formTitle}</h1>
       <form onSubmit={handleValidation}>
-        <label htmlFor="name">Name</label>
-        <input
-          className="form__text"
-          type="text"
-          value={newMenu.name}
-          onInput={(event) =>
-            setNewMenu({ ...newMenu, name: event.target.value })
-          }
-        />
-        <label htmlFor="ingredients">Ingredients</label>
-        <input
-          className="form__text"
-          type="text"
-          value={newMenu.ingredients}
-          onInput={(event) =>
-            setNewMenu({ ...newMenu, ingredients: event.target.value })
-          }
-        />
-        <label htmlFor="allergens">allergens</label>
-        <input
-          className="form__text"
-          type="text"
-          placeholder="Input none if no allergens"
-          value={newMenu.allergens}
-          onInput={(event) =>
-            setNewMenu({ ...newMenu, allergens: event.target.value })
-          }
-        />
-
-        {newMenu.vegetarian ? checkboxCheckedJSX : checkbocUncheckJSX}
-
-        <label htmlFor="price">Price</label>
-        <input
-          className="form__text"
-          type="number"
-          value={newMenu.price}
-          placeholder="max:£1000"
-          step="0.01"
-          min="0"
-          max="1000"
-          name="price"
-          onInput={(event) =>
-            setNewMenu({ ...newMenu, price: event.target.value })
-          }
-        />
-
-        <div type="submit">
-          <Button btnTitle="Submit" />
+        <div className="form__title">
+          <label htmlFor="name">Name</label>
+          <input
+            className="form__text"
+            type="text"
+            value={newMenu.name}
+            onInput={(event) =>
+              setNewMenu({ ...newMenu, name: event.target.value })
+            }
+          />
         </div>
+
+        <div className="form__title">
+          <label htmlFor="ingredients">Ingredients</label>
+          <input
+            className="form__text"
+            type="text"
+            value={newMenu.ingredients}
+            onInput={(event) =>
+              setNewMenu({ ...newMenu, ingredients: event.target.value })
+            }
+          />
+        </div>
+
+        <div className="form__title">
+          <label htmlFor="allergens">Allergens</label>
+          <input
+            className="form__text"
+            type="text"
+            placeholder="Input none if no allergens"
+            value={newMenu.allergens}
+            onInput={(event) =>
+              setNewMenu({ ...newMenu, allergens: event.target.value })
+            }
+          />
+        </div>
+
+        <div className="form__title">
+          {newMenu.vegetarian ? checkboxCheckedJSX : checkbocUncheckJSX}
+        </div>
+
+        <div className="form__title">
+          <label htmlFor="price">Price</label>
+          <input
+            className="form__text"
+            type="number"
+            value={newMenu.price}
+            placeholder="max:£1000"
+            step="0.01"
+            min="0"
+            max="1000"
+            name="price"
+            onInput={(event) =>
+              setNewMenu({ ...newMenu, price: event.target.value })
+            }
+          />
+        </div>
+
+        {isNewMenu ? formWithoutDelBtn : formWithDelBtn}
       </form>
     </div>
   );

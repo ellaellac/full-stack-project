@@ -8,15 +8,15 @@ const Home = () => {
       <div className="home__container">
         <h1 className="home__title">Menu App</h1>
         <Link to="/menu">
-          <Button btnTitle="View Menu" className="home__button" />
+          <Button btnTitle="View Menu" className="botton--primary" />
         </Link>
 
         <Link to="/menu/create">
-          <Button btnTitle="Create Menu" className="home__button" />
+          <Button btnTitle="Create Menu" className="botton--primary" />
         </Link>
 
         <Link to="/menu/update">
-          <Button btnTitle="Update Menu" className="home__button" />
+          <Button btnTitle="Update Menu" className="botton--primary" />
         </Link>
       </div>
     </div>

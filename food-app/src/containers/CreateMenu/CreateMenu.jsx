@@ -36,6 +36,7 @@ const CreateMenu = () => {
         handleSubmit={handleSubmit}
         formTitle="New Menu"
         defaultForm={defaultForm}
+        isNewMenu={true}
       />
     </div>
   );

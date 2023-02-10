@@ -71,9 +71,9 @@ const EditMenu = () => {
           formTitle="Update Menu"
           defaultForm={menuById}
           handleSubmit={handleUpdateMenu}
+          handleDeleteMenu={handleDeleteMenu}
         />
       )}
-      <Button btnTitle="Delete" onClick={handleDeleteMenu} />
     </div>
   );
 };
