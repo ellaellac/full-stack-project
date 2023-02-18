@@ -1,8 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Form from "../components/Form/Form";
-import Button from "../components/Button/Button";
-import Item from "../components/Item/Item";
+import Form from "../../components/Form/Form";
+import Item from "../../components/Item/Item";
 
 const EditMenu = () => {
   const [menuById, setMenuById] = useState("");
@@ -50,7 +49,7 @@ const EditMenu = () => {
 
     if (result.ok) {
       alert("Menu deleted");
-      navigate("/menu/update");
+      navigate("/menu");
     } else {
       const message = await result.text();
       alert(message);

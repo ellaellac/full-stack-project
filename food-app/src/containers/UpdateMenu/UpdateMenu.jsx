@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Item from "../../components/Item/Item";
-// import Button from "../../components/Button/Button";
 import "./UpdateMenu.scss";
 
 const UpdateMenu = () => {
